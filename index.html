@@ -3,200 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PT Khatulistiwa Sinar Energi</title>
-
-<meta name="description" content="Mitra Penyalur dan Transportir BBM Industri wilayah Kalimantan dan Indonesia">
-<meta name="keywords" content="Solar Industri, BBM Industri, Penyalur BBM, Transportir BBM">
-
+<title>PT.Khatulistiwa Sinar Energi</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Segoe UI,Arial;background:#f4f6fa}
-header{background:#0b3d2e;color:white;padding:15px 25px;display:flex;justify-content:space-between;align-items:center}
-nav a{color:white;margin-left:15px;text-decoration:none}
-.hero{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('hero.jpg');background-size:cover;color:white;text-align:center;padding:90px 20px}
-.btn{background:#ffc107;padding:12px 25px;border-radius:8px;text-decoration:none;color:black;font-weight:bold;cursor:pointer}
-section{padding:60px 15px}
-.container{max-width:1100px;margin:auto}
-h2{text-align:center;margin-bottom:25px}
-.harga-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:white;padding:25px;border-radius:15px;text-align:center;box-shadow:0 6px 15px rgba(0,0,0,.08)}
-.card p{font-size:24px;font-weight:bold;color:#0d6efd}
-footer{background:#0d6efd;color:white;text-align:center;padding:20px}
-canvas{background:white;padding:20px;border-radius:15px;box-shadow:0 6px 15px rgba(0,0,0,.08)}
+body{margin:0;font-family:Segoe UI,Arial;background:#f6f8fb;}
+header{background:#0b3d2e;color:white;padding:15px 25px;display:flex;align-items:center;justify-content:space-between;}
+header img{height:45px;}
+nav a{color:white;margin-left:18px;text-decoration:none;font-weight:500;}
+.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('hero.jpg');background-size:cover;background-position:center;color:white;text-align:center;padding:90px 20px;}
+.hero h1{font-size:40px;margin-bottom:10px;}
+.btn{background:#ffc107;padding:12px 25px;border-radius:8px;text-decoration:none;color:black;font-weight:bold;display:inline-block;margin-top:15px;}
+section{padding:50px 15px;}
+.container{max-width:1100px;margin:auto;}
+h2{text-align:center;margin-bottom:25px;}
+.harga-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+.card{background:white;padding:20px;border-radius:12px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+.card h3{margin:0;font-size:18px;}
+.card p{font-size:22px;font-weight:bold;margin-top:8px;color:#0d6efd;}
+.card small{display:block;margin-top:5px;}
+.tentang{background:white;border-radius:12px;padding:30px;box-shadow:0 4px 12px rgba(0,0,0,.08);line-height:1.7;}
+.legal{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;}
+.legal div{background:white;padding:18px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.08);}
+.galeri{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;}
+.galeri img{width:100%;border-radius:10px;height:170px;object-fit:cover;}
+footer{background:#0d6efd;color:white;text-align:center;padding:20px;font-size:14px;}
 </style>
 </head>
-
 <body>
 
 <header>
-<b>PT Khatulistiwa Sinar Energi</b>
-<nav>
-<a href="#harga">Harga</a>
-<a href="#grafik">Grafik</a>
-<a href="#kontak">Kontak</a>
-</nav>
+    <div style="display:flex;align-items:center;gap:12px">
+        <img src="logo.png">
+        <b>PT.Khatulistiwa Sinar Energi</b>
+    </div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#harga">Harga</a>
+        <a href="#tentang">Tentang Kami</a>
+        <a href="#legalitas">Legalitas</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#contact">Kontak</a>
+    </nav>
 </header>
 
-<section class="hero">
-<h1>KHATULISTIWA SINAR ENERGI</h1>
-<p>Mitra Penyalur & Transportir BBM Industri</p>
-<a class="btn" href="https://wa.me/628158841410">📞 Hubungi Kami</a>
+<section class="hero" id="home">
+    <h1>KHATULISTIWA SINAR ENERGI</h1> 
+    <h2>Mitra Penyalur dan Transportir BBM Industri</h2>
+    <p>Melayani Distribusi BBM Industri wilayah KalSel-Teng-Bar</p>
+    <a class="btn" href="https://wa.me/628158841410">📞 Contact Me</a>
 </section>
 
 <section id="harga">
 <div class="container">
-<h2>Harga Publish BBM Industri</h2>
-<p id="periodeText" style="text-align:center;font-weight:bold"></p>
-<div class="harga-box" id="hargaContainer"></div>
-<br>
-<div style="text-align:center">
+<h2>Harga BBM Industri Pertamina</h2>
+<p style="text-align:center;font-weight:bold">Periode Sekarang</p>
+
+<div class="harga-box">
+
+<div class="card" id="cardwilayah1">
+<h3>Wilayah I</h3>
+<small>Sumatra, Jawa, Bali, Madura</small>
+<p></p>
+<small class="keteranganKmr"></small>
+</div>
+
+<div class="card" id="cardwilayah2">
+<h3>Wilayah II</h3>
+<small>Kalimantan</small>
+<p></p>
+<small class="keteranganKmr"></small>
+</div>
+
+<div class="card" id="cardwilayah3">
+<h3>Wilayah III</h3>
+<small>Sulawesi, NTB</small>
+<p></p>
+<small class="keteranganKmr"></small>
+</div>
+
+<div class="card" id="cardwilayah4">
+<h3>Wilayah IV</h3>
+<small>Maluku, NTT, Papua</small>
+<p></p>
+<small class="keteranganKmr"></small>
+</div>
+
+</div>
+
 <button onclick="loginAdmin()" class="btn">🔐 Login Admin</button>
-</div>
+
 </div>
 </section>
 
-<section id="grafik">
+<section id="tentang">
 <div class="container">
-<h2>Grafik Perubahan Harga</h2>
-<canvas id="grafikHarga"></canvas>
+<h2>About</h2>
+<div class="tentang">
+PT Khatulistiwa Sinar Energi bergerak di bidang distribusi BBM industri resmi. Pelayanan cepat, aman, dan terpercaya.
+</div>
 </div>
 </section>
 
-<section id="kontak">
-<div class="container" style="text-align:center">
-<h2>Kontak</h2>
-📍 Pangkalan Bun, Kalimantan Tengah<br><br>
-📱 08158841410<br><br>
-📧 pt.khatulistiwa.sinar.energi@gmail.com
+<section id="legalitas">
+<div class="container">
+<h2>Legalitas Perusahaan</h2>
+<div class="legal">
+<div><b>Nama Perusahaan</b><br>PT Khatulistiwa Sinar Energi<br>"sinergi mengalirkan energi"</div>
+<div><b>NPWP</b><br>1000-0000-0773-4310<br>KPP Pratama Pangkalan Bun</div>
+<div><b>NIB</b><br>1301-2600-7100-5<br>OSS RBA</div>
+<div><b>Izin Niaga BBM</b><br>Terdaftar Resmi ke Niaga Umum</div>
+</div>
+</div>
+</section>
+
+<section id="galeri">
+<div class="container">
+<h2>Galeri Kegiatan</h2>
+<div class="galeri">
+<img src="galeri1.jpg">
+<img src="galeri2.jpg">
+<img src="galeri3.jpg">
+<img src="galeri4.jpg">
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<h2>📞 Contact Me</h2>
+<div class="tentang" style="text-align:center">
+📍 JL.H.M Rafi'i Rt.24 Pangkalan Bun, Kalimantan Tengah<br><br>
+📱 WhatsApp: 08158841410<br><br>
+📧 Email: pt.khatulistiwa.sinar.energi@gmail.com
+</div>
 </div>
 </section>
 
 <footer>
-© 2026 PT Khatulistiwa Sinar Energi
+© 2026 PT Khatulistiwa Sinar Energi – All Rights Reserved
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<!-- SCRIPT FIREBASE + HARGA -->
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDenqfuE7Sjy773lp3k7WYh_3RRSr3nojM",
-  authDomain: "kse-harga-bbm-update.firebaseapp.com",
-  projectId: "kse-harga-bbm-update",
-  storageBucket: "kse-harga-bbm-update.firebasestorage.app",
-  messagingSenderId: "764165984284",
-  appId: "1:764165984284:web:a74aed43317539f5f1cfd9",
-  measurementId: "G-ZGQ5LG6DH9"
+  apiKey: "ISI_APIKEY",
+  authDomain: "PROJECTID.firebaseapp.com",
+  projectId: "PROJECTID",
+  storageBucket: "PROJECTID.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
 };
-
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const ref = doc(db,"hargaBBM","periode");
 
-let wilayah = ["wilayah1","wilayah2","wilayah3","wilayah4"];
-
-function getPeriode(){
-let t=new Date();
-let tgl=t.getDate();
-let bulan=t.toLocaleString('id-ID',{month:'long'});
-let tahun=t.getFullYear();
-return tgl>=15?`Periode 15 – Akhir ${bulan} ${tahun}`:`Periode 1 – 14 ${bulan} ${tahun}`;
-}
+const wilayah = ["wilayah1","wilayah2","wilayah3","wilayah4"];
 
 async function loadHarga(){
-document.getElementById("periodeText").innerText=getPeriode();
-const ref=doc(db,"hargaBBM","periode");
-const snap=await getDoc(ref);
+  const snap = await getDoc(ref);
+  if(!snap.exists()) return;
+  const data = snap.data();
+  for(let i=0;i<wilayah.length;i++){
+    let w = wilayah[i];
+    let now = parseInt(data.sekarang[w]) || 0;
+    let prev = parseInt(data.kemarin[w]) || 0;
+    let selisih = now - prev;
 
-if(snap.exists()){
-let data=snap.data();
-let html="";
-let grafikSekarang=[];
-let grafikKemarin=[];
+    let warna, keterangan;
+    if(selisih>0){
+      warna="red";
+      keterangan=`▲ Naik Rp ${selisih.toLocaleString()}`;
+    } else if(selisih<0){
+      warna="green";
+      keterangan=`▼ Turun Rp ${Math.abs(selisih).toLocaleString()}`;
+    } else {
+      warna="gray";
+      keterangan="● Tidak berubah";
+    }
 
-wilayah.forEach((w,i)=>{
-let sekarang = parseInt(data.sekarang[w]) || 0;
-let kemarin = parseInt(data.kemarin[w]) || 0;
-let selisih = sekarang - kemarin;
-let warna=selisih>0?"red":"green";
-let tanda=selisih>0?"▲":"▼";
-
-html+=`
-<div class="card">
-<h3>Wilayah ${i+1}</h3>
-<p>Rp ${sekarang.toLocaleString()}</p>
-<small style="color:${warna}">
-${tanda} ${Math.abs(selisih).toLocaleString()}
-</small>
-</div>`;
-
-grafikSekarang.push(sekarang);
-grafikKemarin.push(kemarin);
-});
-
-document.getElementById("hargaContainer").innerHTML=html;
-buatGrafik(grafikSekarang,grafikKemarin);
-}
+    document.querySelector(`#card${w} p`).innerText = `Rp ${now.toLocaleString()}`;
+    document.querySelector(`#card${w} .keteranganKmr`).innerText = `Rp ${prev.toLocaleString()} ${keterangan}`;
+    document.querySelector(`#card${w} .keteranganKmr`).style.color = warna;
+  }
 }
 
-function buatGrafik(sekarang,kemarin){
-new Chart(document.getElementById("grafikHarga"),{
-type:"bar",
-data:{
-labels:["Wilayah I","Wilayah II","Wilayah III","Wilayah IV"],
-datasets:[
-{label:"Sekarang",data:sekarang,backgroundColor:"#0d6efd"},
-{label:"Kemarin",data:kemarin,backgroundColor:"#6c757d"}
-]
-}
-});
-}
-
-window.loginAdmin=async function(){
-let pass=prompt("Password Admin:");
-if(pass!=="kse2026"){alert("Salah");return;}
-
-const ref=doc(db,"hargaBBM","periode");
-const snap=await getDoc(ref);
-let data=snap.data();
-let baru={};
-
-for(let i=0;i<wilayah.length;i++){
-let input=prompt(`Harga Wilayah ${i+1}`,data.sekarang[wilayah[i]]);
-baru[wilayah[i]] = parseInt(input) || 0;
-}
-
-let today = new Date().getDate();
-
-let updateData = {
-    sekarang: baru
-};
-
-if (today === 1 || today === 15) {
-    updateData.kemarin = data.sekarang;
-}
-
-await updateDoc(ref, updateData);
-
-alert("Harga berhasil diupdate");
-loadHarga();
+async function loginAdmin(){
+  let pass = prompt("Password Admin:");
+  if(pass==="kse2026"){
+    for(let i=0;i<wilayah.length;i++){
+      let input = prompt(`Harga ${wilayah[i]} sekarang:`);
+      if(input!==null){
+        input = parseInt(input)||0;
+        const snap = await getDoc(ref);
+        const data = snap.data();
+        const baru = {...data.sekarang};
+        baru[wilayah[i]] = input;
+        const today = new Date().getDate();
+        let updateData = {sekarang: baru};
+        if(today===1 || today===15) updateData.kemarin = data.sekarang;
+        await updateDoc(ref,updateData);
+        alert(`Harga ${wilayah[i]} berhasil diperbarui!`);
+      }
+    }
+    loadHarga();
+  } else {
+    alert("Password salah!");
+  }
 }
 
 loadHarga();
 </script>
 
-<script>
-function loginAdmin(){
-    alert("Tombol bekerja");
-}
-</script>
-
-  
 </body>
 </html>
-
-
-
 

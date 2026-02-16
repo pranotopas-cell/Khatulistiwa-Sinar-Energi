@@ -1,103 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
-
 <style>
-body{font-family:Arial;background:#020617;color:white;padding:20px}
-.login,.panel{
-max-width:450px;
-margin:auto;
-background:white;
-color:black;
-padding:25px;
-border-radius:15px}
-input{width:100%;padding:10px;margin:6px 0;border-radius:8px;border:1px solid #ccc}
-button{width:100%;padding:12px;background:#22c55e;border:none;border-radius:10px;font-weight:bold}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+}
+
+.login-box, .dashboard {
+    max-width: 400px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+button {
+    background: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.dashboard {
+    display: none;
+}
+
+.logout {
+    background: red;
+    margin-top: 15px;
+}
 </style>
 </head>
-
 <body>
 
-<div class="login" id="login">
-<h2>Login Admin</h2>
-<input type="password" id="password" placeholder="Masukkan Password">
-<button onclick="login()">Login</button>
+<div class="login-box" id="loginBox">
+    <h2>Login Admin</h2>
+    <input type="password" id="password" placeholder="Masukkan Password">
+    <button onclick="login()">Login</button>
 </div>
 
-<div class="panel" id="panel" style="display:none">
-<h2>Admin Panel Harga</h2>
+<div class="dashboard" id="dashboard">
+    <h2>Admin Panel</h2>
 
-<h4>Periode Sebelumnya</h4>
-<input id="p1-1">
-<input id="p1-2">
-<input id="p1-3">
-<input id="p1-4">
+    <input type="number" id="harga" placeholder="Masukkan Harga Baru">
+    <button onclick="simpanHarga()">Simpan Harga</button>
 
-<h4>Periode Sekarang</h4>
-<input id="p2-1">
-<input id="p2-2">
-<input id="p2-3">
-<input id="p2-4">
+    <p>Harga Sekarang: <b id="hargaSekarang">-</b></p>
 
-<button onclick="simpan()">💾 Simpan Harga</button>
+    <button class="logout" onclick="logout()">Logout</button>
 </div>
 
 <script>
-const PASS="admin123"; // GANTI PASSWORD DI SINI
+const PASSWORD = "admin123";
 
 function login(){
-  const pass = document.getElementById("password").value;
+    const pass = document.getElementById("password").value;
 
-  if(pass === PASS){
-    document.getElementById("loginBox").style.display = "none";
-    document.getElementById("panelBox").style.display = "block";
-    load();
-  } else {
-    alert("❌ Password salah!");
-  }
+    if(pass === PASSWORD){
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("dashboard").style.display = "block";
+        loadHarga();
+    } else {
+        alert("Password salah!");
+    }
 }
 
-}
-
-function load(){
-  const data=JSON.parse(localStorage.getItem("harga")) || {
-    p1:[20650,20650,20650,20650],
-    p2:[20800,20800,20800,20800]
-  };
-
-  ["1","2","3","4"].forEach(i=>{
-    document.getElementById("p1-"+i).value=data.p1[i-1];
-    document.getElementById("p2-"+i).value=data.p2[i-1];
-  });
-}
-
-function simpan(){
-  const data={
-    p1:[
-      Number(document.getElementById("p1-1").value),
-      Number(document.getElementById("p1-2").value),
-      Number(document.getElementById("p1-3").value),
-      Number(document.getElementById("p1-4").value)
-    ],
-    p2:[
-      Number(document.getElementById("p2-1").value),
-      Number(document.getElementById("p2-2").value),
-      Number(document.getElementById("p2-3").value),
-      Number(document.getElementById("p2-4").value)
-    ]
-  };
-
-  localStorage.setItem("harga",JSON.stringify(data));
-  alert("✅ Harga berhasil disimpan!");
-}
-</script>
-
-</body>
-</html>
-
-
-
+function simpanHarga
 

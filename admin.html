@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Panel</title>
+<title>Admin Panel Harga</title>
 
 <style>
 *{box-sizing:border-box}
@@ -11,16 +11,16 @@
 body{
     margin:0;
     font-family:Arial, Helvetica, sans-serif;
-    background:#f2f4f7;
+    background:#f4f6f9;
 }
 
 .container{
-    max-width:400px;
-    margin:80px auto;
+    max-width:450px;
+    margin:60px auto;
     background:white;
     padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,.12);
 }
 
 h2{
@@ -31,7 +31,7 @@ input,button{
     width:100%;
     padding:12px;
     margin-top:10px;
-    font-size:16px;
+    font-size:15px;
 }
 
 button{
@@ -49,6 +49,14 @@ button:hover{
 .logout{
     background:#dc3545;
 }
+
+.card{
+    background:#f1f3f6;
+    padding:12px;
+    margin-top:12px;
+    border-radius:8px;
+    font-size:14px;
+}
 </style>
 </head>
 
@@ -57,60 +65,75 @@ button:hover{
 <div class="container" id="loginBox">
     <h2>Login Admin</h2>
     <input type="password" id="password" placeholder="Masukkan Password">
-    <button id="btnLogin">LOGIN</button>
+    <button onclick="login()">LOGIN</button>
 </div>
 
 <div class="container" id="dashboard" style="display:none">
-    <h2>Dashboard Harga</h2>
-    <input type="number" id="harga" placeholder="Masukkan Harga Baru">
-    <button id="btnSimpan">Simpan Harga</button>
 
-    <p style="margin-top:15px">
-        Harga Sekarang:
-        <b id="hargaSekarang">-</b>
-    </p>
+    <h2>Dashboard Harga Solar Industri</h2>
 
-    <button class="logout" id="btnLogout">Logout</button>
+    <input id="periode" placeholder="Periode (contoh: 1–14 Feb 2026)">
+
+    <input id="w1" placeholder="Wilayah I (Sumatra, Jawa, Bali, Madura)">
+    <input id="w2" placeholder="Wilayah II (Kalimantan)">
+    <input id="w3" placeholder="Wilayah III (Sulawesi, NTB)">
+    <input id="w4" placeholder="Wilayah IV (Maluku, NTT, Papua)">
+
+    <button onclick="simpan()">Simpan Harga</button>
+
+    <div class="card" id="preview"></div>
+
+    <button class="logout" onclick="logout()">Logout</button>
+
 </div>
 
 <script>
 const PASSWORD = "admin123";
 
-document.getElementById("btnLogin").addEventListener("click", function(){
+function login(){
     let pass = document.getElementById("password").value;
-
     if(pass === PASSWORD){
-        document.getElementById("loginBox").style.display = "none";
-        document.getElementById("dashboard").style.display = "block";
-        loadHarga();
-    }else{
+        loginBox.style.display = "none";
+        dashboard.style.display = "block";
+        load();
+    } else {
         alert("Password salah!");
     }
-});
-
-document.getElementById("btnSimpan").addEventListener("click", function(){
-    let harga = document.getElementById("harga").value;
-
-    if(harga === ""){
-        alert("Harga kosong!");
-        return;
-    }
-
-    localStorage.setItem("harga", harga);
-    alert("Harga berhasil disimpan");
-    loadHarga();
-});
-
-document.getElementById("btnLogout").addEventListener("click", function(){
-    location.reload();
-});
-
-function loadHarga(){
-    let harga = localStorage.getItem("harga") || "-";
-    document.getElementById("hargaSekarang").innerText = "Rp " + harga;
 }
-</script>
 
-</body>
-</html>
+function logout(){
+    location.reload();
+}
+
+function simpan(){
+    let data = {
+        periode: periode.value,
+        w1: w1.value,
+        w2: w2.value,
+        w3: w3.value,
+        w4: w4.value
+    };
+    localStorage.setItem("harga", JSON.stringify(data));
+    alert("Harga berhasil disimpan");
+    tampilkan();
+}
+
+function load(){
+    let data = JSON.parse(localStorage.getItem("harga"));
+    if(data){
+        periode.value = data.periode;
+        w1.value = data.w1;
+        w2.value = data.w2;
+        w3.value = data.w3;
+        w4.value = data.w4;
+        tampilkan();
+    }
+}
+
+function tampilkan(){
+    let data = JSON.parse(localStorage.getItem("harga"));
+    if(!data) return;
+
+
+
 

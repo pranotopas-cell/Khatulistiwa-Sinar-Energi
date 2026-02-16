@@ -1,517 +1,206 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PT Khatulistiwa Sinar Energi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PT Khatulistiwa Sinar Energi</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    body{background:#020617;color:#fff}
 
-  body{
-  background:#f8fafc;
-  color:#222;
-  line-height:1.7;
-}
+    header{
+      position:fixed;
+      top:0;left:0;
+      width:100%;
+      background:#020617;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      border-bottom:1px solid #1e293b;
+    }
 
-header{
-  background:#0f3d2e;
-  color:white;
-  position:fixed;
-  width:100%;
-  top:0;
-  z-index:999;
-}
+    header h1{font-size:20px;color:#22c55e}
 
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 50px;
-}
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:600;
+    }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+    nav a:hover{color:#22c55e}
 
-.brand img{
-  height:50px;
-}
+    .hero{
+      height:100vh;
+      background:linear-gradient(135deg,#020617,#020617aa),url('https://images.unsplash.com/photo-1610620769899-0c98f6e2a3fd?auto=format&fit=crop&w=1600&q=80') center/cover;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
 
-.menu a{
-  margin-left:25px;
-  color:white;
-  text-decoration:none;
-  font-weight:600;
-}
+    .hero h2{font-size:48px}
+    .hero p{font-size:18px;margin:15px 0}
+    .hero button{
+      padding:14px 30px;
+      border:none;
+      background:#22c55e;
+      border-radius:8px;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+    }
 
-.menu a:hover{
-  border-bottom:2px solid #1abc9c;
-}
+    section{padding:80px 30px}
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:
-  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-  url('https://images.unsplash.com/photo-1581092919537-28baf6c80d0c') center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:white;
-  padding:20px;
-}
+    .title{text-align:center;font-size:32px;margin-bottom:40px}
 
-.hero h1{
-  font-size:52px;
-  margin-bottom:15px;
-}
+    /* DASHBOARD HARGA */
 
-.hero p{
-  font-size:22px;
-  margin-bottom:25px;
-}
+    .harga-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+      max-width:1100px;
+      margin:auto;
+    }
 
-.btn{
-  display:inline-block;
-  padding:14px 30px;
-  background:#1abc9c;
-  color:white;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-}
+    .harga-card{
+      background:#ffffff;
+      color:#020617;
+      padding:25px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,.3);
+    }
 
-.btn:hover{
-  background:#16a085;
-}
+    .harga-card h3{text-align:center;margin-bottom:15px}
+    .harga-card li{
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      padding:10px 0;
+      border-bottom:1px dashed #ccc;
+    }
 
-  </div>
-</div>
+    .harga-card span{color:#16a34a;font-weight:bold}
 
-/* SECTION */
-section{
-  padding:90px 12%;
-}
+    /* GALLERY */
 
-h2{
-  text-align:center;
-  color:#0f3d2e;
-  margin-bottom:30px;
-  font-size:36px;
-}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+      max-width:1100px;
+      margin:auto;
+    }
 
-p.center{
-  text-align:center;
-  max-width:900px;
-  margin:auto;
-}
+    .gallery img{
+      width:100%;
+      border-radius:12px;
+      transition:.3s;
+    }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-  margin-top:40px;
-}
+    .gallery img:hover{transform:scale(1.05)}
 
-.card{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,.08);
-  text-align:center;
-  transition:.3s;
-}
+    /* WHATSAPP */
 
-.card:hover{
-  transform:translateY(-5px);
-}
+    .wa-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      padding:14px 18px;
+      border-radius:50px;
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 8px 20px rgba(0,0,0,.3);
+    }
 
-/* FOOTER */
-footer{
-  background:#0f3d2e;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
+    footer{
+      background:#020617;
+      padding:25px;
+      text-align:center;
+      border-top:1px solid #1e293b;
+    }
 
-.wa-float{
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,.3);
-  text-decoration: none;
-  z-index: 9999;
-}
-
-.wa-float img{
-  width: 28px;
-}
-
-.wa-text{
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-
-@media(max-width:768px){
-  .navbar{
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .hero h1{
-    font-size:34px;
-  }
-
-  section{
-    padding:70px 8%;
-  }
-}
-</style>
+  </style>
 </head>
-.slider{
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding: 15px 5px;
-}
-
-.slider img{
-  width: 260px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: pointer;
-  scroll-snap-align: start;
-  transition: .3s;
-}
-
-.slider img:hover{
-  transform: scale(1.05);
-}
-
-/* MODAL PREVIEW */
-.modal{
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  inset: 0;
-  background: rgba(0,0,0,.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content{
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-}
-
-.close{
-  position: absolute;
-  top: 20px;
-  right: 25px;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-}
-</div>   <!-- akhir hero -->
-
-  </div>
-</section>
-
 <body>
 
 <header>
-  <div class="navbar">
-    <div class="brand">
-      <img src="logo.png">
-      <strong>PT Khatulistiwa Sinar Energi</strong>
-    </div>
-    <<div class="menu">
-  <a href="#home">Home</a>
-  <a href="#tentang">Tentang Kami</a>
-  <a href="#keunggulan">Keunggulan</a>
-  <a href="#legalitas">Legalitas</a>
-  <a href="#layanan">Layanan</a>
-  <a href="#proyek">Proyek</a>
-  <a href="#galeri">Galeri</a>
-  <a href="#kontak">Kontak</a>
-</div>
-
-    </div>
-  </div>
+  <h1>PT KHATULISTIWA SINAR ENERGI</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#harga">Harga</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
 </header>
 
-<div id="home" class="hero">
+<section class="hero" id="home">
   <div>
-    <H1>KHATULISTIWA SINAR ENERGI</h1>
-    <h2>Mitra Penyalur & Transportir BBM Industri</h2>
-    <p>Sinergi Mengalirkan Energi Untuk Negeri</p>
-    <a href="#kontak" class="btn">Hubungi Kami</a>
-  </div>
-</div>
-
+    <h2>Distributor Solar Industri Resmi</h2>
+    <p>Wilayah Indonesia – Harga Publish Pertamina – Legal & Terpercaya</p>
+    <button onclick="window.location='#harga'">Lihat Harga</button>
   </div>
 </section>
-<section id="tentang">
-  <h2>Tentang Kami</h2>
-  <p class="center">
-    PT Khatulistiwa Sinar Energi merupakan perusahaan yang bergerak di bidang penyaluran 
-    dan transportasi BBM industri di wilayah Kalimantan Tengah yang berkomitmen pada kecepatan, keamanan, serta ketepatan 
-    distribusi energi untuk mendukung kebutuhan industri nasional.
-  </p>
- 
-<section class="center">
-  <h2 class="harga-title">📊 Harga Publish Pertamina</h2>
 
-  <div class="center">
+<section id="harga">
+  <h2 class="title">📊 Dashboard Harga Publish Pertamina</h2>
 
-    <div class="harga-grid">
-      <h3>Periode 1 - 14 Februari 2026</h3>
+  <div class="harga-grid">
+
+    <div class="harga-card">
+      <h3>1 – 14 Februari 2026</h3>
       <ul>
-        <li>Wilayah I (Sumatra, Jawa, Bali, Madura) <span>Rp 20.650</span></li>
-        <li>Wilayah II (Kalimantan) <span>Rp 20.650</span></li>
-        <li>Wilayah III (Sulawesi, NTB) <span>Rp 20.650</span></li>
-        <li>Wilayah IV (Maluku, NTT, Papua) <span>Rp 20.650</span></li>
+        <li>Wilayah I <span>Rp 20.650</span></li>
+        <li>Wilayah II <span>Rp 20.650</span></li>
+        <li>Wilayah III <span>Rp 20.650</span></li>
+        <li>Wilayah IV <span>Rp 20.650</span></li>
       </ul>
     </div>
 
-    <div class="harga-card highlight">
-      <h3>Periode 14 - 28 Februari 2026</h3>
+    <div class="harga-card">
+      <h3>14 – 28 Februari 2026</h3>
       <ul>
-        <li>Wilayah I (Sumatra, Jawa, Bali, Madura) <span>Rp 20.650</span></li>
-        <li>Wilayah II (Kalimantan) <span>Rp 20.650</span></li>
-        <li>Wilayah III (Sulawesi, NTB) <span>Rp 20.650</span></li>
-        <li>Wilayah IV (Maluku, NTT, Papua) <span>Rp 20.650</span></li>
+        <li>Wilayah I <span>Rp 20.650</span></li>
+        <li>Wilayah II <span>Rp 20.650</span></li>
+        <li>Wilayah III <span>Rp 20.650</span></li>
+        <li>Wilayah IV <span>Rp 20.650</span></li>
       </ul>
     </div>
 
   </div>
 </section>
 
-<section id="keunggulan">
-  <h2>Keunggulan Kami</h2>
-  <div class="grid">
-    <div class="card">Distribusi Cepat & Tepat Waktu</div>
-    <div class="card">Armada Lengkap & Terawat</div>
-    <div class="card">Tenaga Profesional & Bersertifikat</div>
-    <div class="card">Legalitas Lengkap & Resmi</div>
-  </div>
-  
-   <section id="Legalitas">
-    <h2>Legalitas Kami</h2>
-    <div class="grid">
-      <div class="box">NIB terbit dari OSS RBA</div>
-      <div class="box">Akta Notaris sesuai KBLI</div>
-      <div class="box">Kontrak dengan Penyedia Barang</div>
-      <div class="box">Angkutan BBm sesuai dengan Perijinan </div>
-    </div>
-</section>
-  
-<div id="proyek" class="section">
-  <h2>Proyek Kami</h2>
-  <p>Daftar proyek pengiriman dan distribusi BBM industri.</p>
-</div>
-<div id="galeri" class="section">
-  <h2>Galeri Kegiatan</h2>
-  <p>Dokumentasi armada dan kegiatan operasional.</p>
-</div>
-
-<section id="layanan">
-  
-  <h2>Layanan Kami</h2>
-  <div class="grid">
-    <div class="card">Mitra Penyalur Solar Industri</div>
-    <div class="card">Transportasi BBM Industri</div>
-    <div class="card">Pengiriman Skala Besar via SPOB ( Kapal )</div>
-    <div class="card">Logistik Energi Terpadu</div>
+<section id="gallery">
+  <h2 class="title">📸 Gallery Premium</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=600&q=80">
+    <img src="https://images.unsplash.com/photo-1581091870627-3ff48b30c7b8?auto=format&fit=crop&w=600&q=80">
+    <img src="https://images.unsplash.com/photo-1627467959547-b6c927f40d68?auto=format&fit=crop&w=600&q=80">
+    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80">
   </div>
 </section>
 
 <section id="kontak">
-  <h2>Kontak Perusahaan</h2>
-  <div class="grid">
-    <div class="card">
-      📍 Alamat <br><br>
-      Jl.H.M.Rafi'i rt 24 Madurejo Arut Selatan Pangkalan Bun
-    </div>
-    <div class="card">
-      📞 Telepon <br><br>
-      08158841410
-    </div>
-    <div class="card">
-      ✉ Email <br><br>
-      pt.khatulistiwa.sinar.energi@gmail.com
-    </div>
-  </div>
+  <h2 class="title">📞 Hubungi Kami</h2>
+  <p style="text-align:center">PT Khatulistiwa Sinar Energi <br> Solar Industri – Indonesia</p>
 </section>
 
 <footer>
-  © 2026 PT Khatulistiwa Sinar Energi | Company Profile Official Website
+  © 2026 PT Khatulistiwa Sinar Energi — All Rights Reserved
 </footer>
 
-<a class="wa-float" href="https://wa.me/628158841410" target="_blank">💬</a>
-
-</b<!-- FLOATING WHATSAPP BUTTON -->
-<a href="https://wa.me/62815841410" class="wa-float" target="_blank">
-  <span class="wa-text">Hubungi Kami</span>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+<a href="https://wa.me/628XXXXXXXXXX" class="wa-btn" target="_blank">
+💬 Hubungi Kami
 </a>
-  <script>
-function openModal(src){
-  document.getElementById("modal").style.display = "flex";
-  document.getElementById("modalImg").src = src;
-}
 
-function closeModal(){
-  document.getElementById("modal").style.display = "none";
-}
-</script>
-.harga-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.harga-box{
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
-  transition: .3s;
-}
-
-.harga-box:hover{
-  transform: translateY(-5px);
-}
-
-.harga-box h3{
-  text-align: center;
-  color: #0f3d2e;
-  margin-bottom: 15px;
-}
-
-.harga-box ul{
-  list-style: none;
-  padding: 0;
-}
-
-.harga-box li{
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px dashed #ddd;
-}
-
-.harga-box li span{
-  font-weight: bold;
-  color: #25d366;
-}
-
-.periode{
-  text-align: center;
-  color: #666;
-  margin-top: -10px;
-}
-.harga-section {
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #0f172a, #020617);
-  text-align: center;
-}
-
-.harga-title {
-  color: #fff;
-  font-size: 28px;
-  margin-bottom: 40px;
-}
-
-.harga-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.harga-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  transition: 0.3s ease;
-}
-
-.harga-card:hover {
-  transform: translateY(-6px);
-}
-
-.harga-card h3 {
-  color: #0f172a;
-  margin-bottom: 16px;
-}
-
-.harga-card ul {
-  list-style: none;
-  padding: 0;
-}
-
-.harga-card li {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed #ddd;
-  padding: 10px 0;
-  font-size: 14px;
-}
-
-.harga-card span {
-  font-weight: bold;
-  color: #16a34a;
-}
-
-.highlight {
-  border: 3px solid #22c55e;
-}
-
-body>
+</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -140,19 +140,32 @@ footer{
   padding:20px;
 }
 
-/* WHATSAPP */
 .wa-float{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:white;
-  padding:15px 18px;
-  border-radius:50%;
-  font-size:22px;
-  box-shadow:0 4px 12px rgba(0,0,0,.3);
-  text-decoration:none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,.3);
+  text-decoration: none;
+  z-index: 9999;
 }
+
+.wa-float img{
+  width: 28px;
+}
+
+.wa-text{
+  font-size: 14px;
+  white-space: nowrap;
+}
+
 
 @media(max-width:768px){
   .navbar{
@@ -250,7 +263,13 @@ footer{
 
 <a class="wa-float" href="https://wa.me/628158841410" target="_blank">💬</a>
 
-</body>
+</b<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/62815841410" class="wa-float" target="_blank">
+  <span class="wa-text">Hubungi Kami</span>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+ody>
 </html>
+
 
 

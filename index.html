@@ -6,9 +6,14 @@
 <title>PT Khatulistiwa Sinar Energi</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#020617;color:white;padding-top:80px}
-header{position:fixed;top:0;left:0;width:100%;background:#020617;
-padding:12px 25px;display:flex;justify-content:space-between;align-items:center;
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#020617;color:white;padding-top:80px}
+
+header{
+position:fixed;top:0;left:0;width:100%;
+background:#020617;
+padding:12px 25px;
+display:flex;justify-content:space-between;align-items:center;
 border-bottom:1px solid #1e293b;z-index:999}
 
 .logo{display:flex;align-items:center;gap:10px}
@@ -16,37 +21,60 @@ border-bottom:1px solid #1e293b;z-index:999}
 
 nav a{color:white;text-decoration:none;margin-left:20px;font-weight:bold}
 
-section{padding:60px 20px}
-
-.hero{text-align:center;height:80vh;display:flex;flex-direction:column;
+.hero{
+height:80vh;
+display:flex;flex-direction:column;
 justify-content:center;align-items:center;
+text-align:center;
 background:linear-gradient(#020617cc,#020617cc),
 url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') center/cover}
 
-.hero button{padding:14px 25px;border:none;border-radius:10px;background:#22c55e;font-weight:bold}
+.hero button{
+padding:14px 25px;border:none;border-radius:10px;
+background:#22c55e;font-weight:bold;cursor:pointer}
 
-.harga-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;margin:auto}
+section{padding:60px 20px}
 
-.card{background:white;color:black;padding:20px;border-radius:15px}
+.harga-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto}
 
-.card li{list-style:none;display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #ccc}
+.card{
+background:white;
+color:black;
+padding:20px;
+border-radius:15px}
 
-.status{text-align:center;font-weight:bold;padding:8px;border-radius:10px;margin-bottom:10px}
+.card li{
+list-style:none;
+display:flex;
+justify-content:space-between;
+padding:8px 0;
+border-bottom:1px dashed #ccc}
+
+.status{
+text-align:center;
+font-weight:bold;
+padding:8px;
+border-radius:10px;
+margin-bottom:10px}
 
 .naik{background:#fee2e2;color:#b91c1c}
 .turun{background:#dcfce7;color:#166534}
 
 .penawaran{
-margin-top:15px;
 display:block;
+margin-top:15px;
 text-align:center;
 background:#22c55e;
 color:black;
 padding:12px;
 border-radius:10px;
 text-decoration:none;
-font-weight:bold;
-}
+font-weight:bold}
 
 footer{text-align:center;padding:20px;border-top:1px solid #1e293b}
 </style>
@@ -73,26 +101,27 @@ footer{text-align:center;padding:20px;border-top:1px solid #1e293b}
 </section>
 
 <section id="harga">
-  <h2 style="text-align:center">📊 Dashboard Harga Realtime</h2>
+<h2 style="text-align:center;margin-bottom:25px">📊 Dashboard Harga</h2>
 
-  <div class="harga-grid">
+<div class="harga-grid">
 
-    <div class="card">
-      <h3>Periode Sebelumnya</h3>
-      <ul id="p1"></ul>
-    </div>
+<div class="card">
+<h3>Periode Sebelumnya</h3>
+<ul id="p1"></ul>
+</div>
 
-    <div class="card">
-      <h3>Periode Sekarang</h3>
-      <div id="status" class="status"></div>
-      <ul id="p2"></ul>
+<div class="card">
+<h3>Periode Sekarang</h3>
+<div id="status" class="status"></div>
+<ul id="p2"></ul>
 
-      <a class="penawaran" href="https://wa.me/628XXXXXXXXXX" target="_blank">
-        💬 Minta Penawaran
-      </a>
-    </div>
+<a class="penawaran" href="https://wa.me/628XXXXXXXXXX" target="_blank">
+💬 Minta Penawaran
+</a>
 
-  </div>
+</div>
+
+</div>
 </section>
 
 <footer>
@@ -110,8 +139,14 @@ const wilayah=["Wilayah I","Wilayah II","Wilayah III","Wilayah IV"];
 function render(){
   p1.innerHTML="";
   p2.innerHTML="";
-  data.p1.forEach((v,i)=>p1.innerHTML+=`<li>${wilayah[i]} <b>Rp ${v.toLocaleString("id-ID")}</b></li>`);
-  data.p2.forEach((v,i)=>p2.innerHTML+=`<li>${wilayah[i]} <b>Rp ${v.toLocaleString("id-ID")}</b></li>`);
+
+  data.p1.forEach((v,i)=>{
+    p1.innerHTML+=`<li>${wilayah[i]} <b>Rp ${v.toLocaleString("id-ID")}</b></li>`;
+  });
+
+  data.p2.forEach((v,i)=>{
+    p2.innerHTML+=`<li>${wilayah[i]} <b>Rp ${v.toLocaleString("id-ID")}</b></li>`;
+  });
 
   let diff=data.p2[0]-data.p1[0];
   if(diff>0){
@@ -130,3 +165,4 @@ render();
 
 </body>
 </html>
+

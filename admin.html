@@ -1,92 +1,116 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Admin Panel</title>
+
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    margin: 0;
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f2f4f7;
 }
 
-.login-box, .dashboard {
-    max-width: 400px;
-    margin: 80px auto;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.container{
+    max-width:400px;
+    margin:80px auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
 }
 
-h2 {
-    text-align: center;
+h2{
+    text-align:center;
 }
 
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
+input,button{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    font-size:16px;
 }
 
-button {
-    background: #007bff;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
 }
 
-button:hover {
-    background: #0056b3;
+button:hover{
+    background:#0056b3;
 }
 
-.dashboard {
-    display: none;
-}
-
-.logout {
-    background: red;
-    margin-top: 15px;
+.logout{
+    background:#dc3545;
 }
 </style>
 </head>
+
 <body>
 
-<div class="login-box" id="loginBox">
+<div class="container" id="loginBox">
     <h2>Login Admin</h2>
     <input type="password" id="password" placeholder="Masukkan Password">
-    <button onclick="login()">Login</button>
+    <button id="btnLogin">LOGIN</button>
 </div>
 
-<div class="dashboard" id="dashboard">
-    <h2>Admin Panel</h2>
-
+<div class="container" id="dashboard" style="display:none">
+    <h2>Dashboard Harga</h2>
     <input type="number" id="harga" placeholder="Masukkan Harga Baru">
-    <button onclick="simpanHarga()">Simpan Harga</button>
+    <button id="btnSimpan">Simpan Harga</button>
 
-    <p>Harga Sekarang: <b id="hargaSekarang">-</b></p>
+    <p style="margin-top:15px">
+        Harga Sekarang:
+        <b id="hargaSekarang">-</b>
+    </p>
 
-    <button class="logout" onclick="logout()">Logout</button>
+    <button class="logout" id="btnLogout">Logout</button>
 </div>
 
 <script>
 const PASSWORD = "admin123";
 
-function login(){
-    const pass = document.getElementById("password").value;
+document.getElementById("btnLogin").addEventListener("click", function(){
+    let pass = document.getElementById("password").value;
 
     if(pass === PASSWORD){
         document.getElementById("loginBox").style.display = "none";
         document.getElementById("dashboard").style.display = "block";
         loadHarga();
-    } else {
+    }else{
         alert("Password salah!");
     }
-}
+});
 
-function simpanHarga
+document.getElementById("btnSimpan").addEventListener("click", function(){
+    let harga = document.getElementById("harga").value;
+
+    if(harga === ""){
+        alert("Harga kosong!");
+        return;
+    }
+
+    localStorage.setItem("harga", harga);
+    alert("Harga berhasil disimpan");
+    loadHarga();
+});
+
+document.getElementById("btnLogout").addEventListener("click", function(){
+    location.reload();
+});
+
+function loadHarga(){
+    let harga = localStorage.getItem("harga") || "-";
+    document.getElementById("hargaSekarang").innerText = "Rp " + harga;
+}
+</script>
+
+</body>
+</html>
 

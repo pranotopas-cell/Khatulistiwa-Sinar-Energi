@@ -168,10 +168,17 @@ let input=prompt(`Harga Wilayah ${i+1}`,data.sekarang[wilayah[i]]);
 baru[wilayah[i]] = parseInt(input) || 0;
 }
 
-await updateDoc(ref,{
-kemarin:data.sekarang,
-sekarang:baru
-});
+let today = new Date().getDate();
+
+let updateData = {
+    sekarang: baru
+};
+
+if (today === 1 || today === 15) {
+    updateData.kemarin = data.sekarang;
+}
+
+await updateDoc(ref, updateData);
 
 alert("Harga berhasil diupdate");
 loadHarga();
@@ -189,6 +196,7 @@ function loginAdmin(){
   
 </body>
 </html>
+
 
 
 

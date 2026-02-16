@@ -49,13 +49,17 @@ button{width:100%;padding:12px;background:#22c55e;border:none;border-radius:10px
 const PASS="admin123"; // GANTI PASSWORD DI SINI
 
 function login(){
-  if(password.value===PASS){
-    login.style.display="none";
-    panel.style.display="block";
+  const pass = document.getElementById("password").value;
+
+  if(pass === PASS){
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("panelBox").style.display = "block";
     load();
-  }else{
-    alert("Password salah!");
+  } else {
+    alert("❌ Password salah!");
   }
+}
+
 }
 
 function load(){
@@ -93,6 +97,7 @@ function simpan(){
 
 </body>
 </html>
+
 
 
 

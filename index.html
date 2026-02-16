@@ -1,139 +1,161 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PT Khatulistiwa Sinar Energi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PT Khatulistiwa Sinar Energi</title>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-    body{background:#020617;color:#fff}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+body{background:#020617;color:#fff;padding-top:80px}
 
-    header{
-      position:fixed;
-      top:0;left:0;
-      width:100%;
-      background:#020617;
-      padding:15px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
-      border-bottom:1px solid #1e293b;
-    }
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;
+  width:100%;
+  background:#020617;
+  padding:12px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+  border-bottom:1px solid #1e293b;
+}
 
-    header h1{font-size:20px;color:#22c55e}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      font-weight:600;
-    }
+.logo img{
+  height:45px;
+}
 
-    nav a:hover{color:#22c55e}
+.logo span{
+  font-size:15px;
+  font-weight:bold;
+  color:#22c55e;
+}
 
-    .hero{
-      height:100vh;
-      background:linear-gradient(135deg,#020617,#020617aa),url('https://images.unsplash.com/photo-1610620769899-0c98f6e2a3fd?auto=format&fit=crop&w=1600&q=80') center/cover;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:20px;
-    }
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+  font-weight:600;
+}
 
-    .hero h2{font-size:48px}
-    .hero p{font-size:18px;margin:15px 0}
-    .hero button{
-      padding:14px 30px;
-      border:none;
-      background:#22c55e;
-      border-radius:8px;
-      font-size:16px;
-      font-weight:bold;
-      cursor:pointer;
-    }
+nav a:hover{color:#22c55e}
 
-    section{padding:80px 30px}
+/* HERO */
+.hero{
+  height:100vh;
+  background:linear-gradient(135deg,#020617cc,#020617cc),
+  url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
 
-    .title{text-align:center;font-size:32px;margin-bottom:40px}
+.hero h1{font-size:48px}
+.hero p{margin:15px 0;font-size:18px}
 
-    /* DASHBOARD HARGA */
+.hero button{
+  padding:14px 30px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    .harga-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:25px;
-      max-width:1100px;
-      margin:auto;
-    }
+/* SECTION */
+section{padding:80px 30px}
 
-    .harga-card{
-      background:#ffffff;
-      color:#020617;
-      padding:25px;
-      border-radius:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,.3);
-    }
+.title{text-align:center;font-size:32px;margin-bottom:40px}
 
-    .harga-card h3{text-align:center;margin-bottom:15px}
-    .harga-card li{
-      list-style:none;
-      display:flex;
-      justify-content:space-between;
-      padding:10px 0;
-      border-bottom:1px dashed #ccc;
-    }
+/* DASHBOARD */
+.harga-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:25px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    .harga-card span{color:#16a34a;font-weight:bold}
+.harga-card{
+  background:#fff;
+  color:#020617;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
 
-    /* GALLERY */
+.harga-card h3{text-align:center;margin-bottom:15px}
 
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:15px;
-      max-width:1100px;
-      margin:auto;
-    }
+.harga-card li{
+  list-style:none;
+  display:flex;
+  justify-content:space-between;
+  padding:10px 0;
+  border-bottom:1px dashed #ccc;
+}
 
-    .gallery img{
-      width:100%;
-      border-radius:12px;
-      transition:.3s;
-    }
+.harga-card span{color:#16a34a;font-weight:bold}
 
-    .gallery img:hover{transform:scale(1.05)}
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  max-width:1100px;
+  margin:auto;
+}
 
-    /* WHATSAPP */
+.gallery img{
+  width:100%;
+  border-radius:12px;
+  transition:.3s;
+}
 
-    .wa-btn{
-      position:fixed;
-      bottom:20px;
-      right:20px;
-      background:#25D366;
-      padding:14px 18px;
-      border-radius:50px;
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      box-shadow:0 8px 20px rgba(0,0,0,.3);
-    }
+.gallery img:hover{transform:scale(1.05)}
 
-    footer{
-      background:#020617;
-      padding:25px;
-      text-align:center;
-      border-top:1px solid #1e293b;
-    }
+/* FOOTER */
+footer{
+  background:#020617;
+  text-align:center;
+  padding:25px;
+  border-top:1px solid #1e293b;
+}
 
-  </style>
+/* WA */
+.wa-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  padding:14px 18px;
+  border-radius:50px;
+  font-weight:bold;
+  box-shadow:0 8px 20px rgba(0,0,0,.4);
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>PT KHATULISTIWA SINAR ENERGI</h1>
+  <div class="logo">
+    <img src="logo.png" alt="Logo PT Khatulistiwa Sinar Energi">
+    <span>PT KHATULISTIWA SINAR ENERGI</span>
+  </div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#harga">Harga</a>
@@ -144,9 +166,9 @@
 
 <section class="hero" id="home">
   <div>
-    <h2>Distributor Solar Industri Resmi</h2>
-    <p>Wilayah Indonesia – Harga Publish Pertamina – Legal & Terpercaya</p>
-    <button onclick="window.location='#harga'">Lihat Harga</button>
+    <h1>Distributor Solar Industri Resmi</h1>
+    <p>Legal • Terpercaya • Harga Publish Pertamina</p>
+    <button onclick="location.href='#harga'">Lihat Harga</button>
   </div>
 </section>
 
@@ -154,7 +176,6 @@
   <h2 class="title">📊 Dashboard Harga Publish Pertamina</h2>
 
   <div class="harga-grid">
-
     <div class="harga-card">
       <h3>1 – 14 Februari 2026</h3>
       <ul>
@@ -174,32 +195,30 @@
         <li>Wilayah IV <span>Rp 20.650</span></li>
       </ul>
     </div>
-
   </div>
 </section>
 
 <section id="gallery">
-  <h2 class="title">📸 Gallery Premium</h2>
+  <h2 class="title">Gallery<h2>
+
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=600&q=80">
-    <img src="https://images.unsplash.com/photo-1581091870627-3ff48b30c7b8?auto=format&fit=crop&w=600&q=80">
     <img src="https://images.unsplash.com/photo-1627467959547-b6c927f40d68?auto=format&fit=crop&w=600&q=80">
     <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80">
+    <img src="https://images.unsplash.com/photo-1581091870627-3ff48b30c7b8?auto=format&fit=crop&w=600&q=80">
   </div>
 </section>
 
 <section id="kontak">
   <h2 class="title">📞 Hubungi Kami</h2>
-  <p style="text-align:center">PT Khatulistiwa Sinar Energi <br> Solar Industri – Indonesia</p>
+  <p style="text-align:center">PT Khatulistiwa Sinar Energi<br>Mitra Penyalur dan Transportir BBM Industri</p>
 </section>
 
 <footer>
   © 2026 PT Khatulistiwa Sinar Energi — All Rights Reserved
 </footer>
 
-<a href="https://wa.me/628XXXXXXXXXX" class="wa-btn" target="_blank">
-💬 Hubungi Kami
-</a>
+<a href="https://wa.me/628158841410" class="wa-btn" target="_blank">💬 Hubungi Kami</a>
 
 </body>
 </html>

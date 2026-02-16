@@ -82,10 +82,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
-apiKey: "ISI_APIKEY",
-authDomain: "ISI_AUTH",
-projectId: "ISI_PROJECTID"
+  apiKey: "AIzaSyDenqfuE7Sjy773lp3k7WYh_3RRSr3nojM",
+  authDomain: "kse-harga-bbm-update.firebaseapp.com",
+  projectId: "kse-harga-bbm-update",
+  storageBucket: "kse-harga-bbm-update.firebasestorage.app",
+  messagingSenderId: "764165984284",
+  appId: "1:764165984284:web:a74aed43317539f5f1cfd9",
+  measurementId: "G-ZGQ5LG6DH9"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -177,3 +182,4 @@ loadHarga();
 
 </body>
 </html>
+

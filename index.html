@@ -111,6 +111,40 @@ header{
 .btn:hover{
   background:#16a085;
 }
+<div id="dashboard" class="section">
+  <h2>Dashboard Harga Solar Industri</h2>
+  <p class="periode">Update Harga Publish Pertamina</p>
+
+  <div class="harga-grid">
+
+    <!-- PERIODE 1 -->
+    <div class="harga-box">
+      <h3>Periode 1 – 14 Februari 2026</h3>
+
+      <ul>
+        <li><b>Wilayah I</b> (Sumatra, Jawa, Bali, Madura) <span>Rp 20.650</span></li>
+        <li><b>Wilayah II</b> (Kalimantan) <span>Rp 20.650</span></li>
+        <li><b>Wilayah III</b> (Sulawesi, NTB) <span>Rp 20.650</span></li>
+        <li><b>Wilayah IV</b> (Maluku, NTT, Papua) <span>Rp 20.650</span></li>
+      </ul>
+
+    </div>
+
+    <!-- PERIODE 2 -->
+    <div class="harga-box">
+      <h3>Periode 14 – 28 Februari 2026</h3>
+
+      <ul>
+        <li><b>Wilayah I</b> (Sumatra, Jawa, Bali, Madura) <span>Rp 20.650</span></li>
+        <li><b>Wilayah II</b> (Kalimantan) <span>Rp 20.650</span></li>
+        <li><b>Wilayah III</b> (Sulawesi, NTB) <span>Rp 20.650</span></li>
+        <li><b>Wilayah IV</b> (Maluku, NTT, Papua) <span>Rp 20.650</span></li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
 
 /* SECTION */
 section{
@@ -298,6 +332,14 @@ footer{
     <div class="card">Tenaga Profesional & Bersertifikat</div>
     <div class="card">Legalitas Lengkap & Resmi</div>
   </div>
+   <section id="Legalitas">
+    <h2>Legalitas Kami</h2>
+    <div class="grid">
+      <div class="box">NIB terbit dari OSS RBA</div>
+      <div class="box">Akta Notaris sesuai KBLI</div>
+      <div class="box">Kontrak dengan Penyedia Barang</div>
+      <div class="box">Angkutan BBm sesuai dengan Perijinan </div>
+    </div>
 </section>
 <div id="proyek" class="section">
   <h2>Proyek Kami</h2>
@@ -357,9 +399,57 @@ function closeModal(){
   document.getElementById("modal").style.display = "none";
 }
 </script>
+.harga-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.harga-box{
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: .3s;
+}
+
+.harga-box:hover{
+  transform: translateY(-5px);
+}
+
+.harga-box h3{
+  text-align: center;
+  color: #0f3d2e;
+  margin-bottom: 15px;
+}
+
+.harga-box ul{
+  list-style: none;
+  padding: 0;
+}
+
+.harga-box li{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.harga-box li span{
+  font-weight: bold;
+  color: #25d366;
+}
+
+.periode{
+  text-align: center;
+  color: #666;
+  margin-top: -10px;
+}
 
 body>
 </html>
+
 
 
 

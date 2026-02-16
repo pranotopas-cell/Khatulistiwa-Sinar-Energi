@@ -148,6 +148,24 @@ footer{
 </style>
 </head>
 
+  .status{
+  text-align:center;
+  font-weight:bold;
+  padding:6px 10px;
+  border-radius:8px;
+  margin-bottom:12px;
+}
+
+.naik{
+  background:#fee2e2;
+  color:#b91c1c;
+}
+
+.turun{
+  background:#dcfce7;
+  color:#166534;
+}
+
 <body>
 
 <header>
@@ -172,32 +190,33 @@ footer{
     <button onclick="location.href='#harga'">Lihat Harga</button>
   </div>
 </section>
+<div class="harga-grid">
 
-<section id="harga">
-  <h2 class="title">📊 Dashboard Harga Publish Pertamina</h2>
-
-  <div class="harga-grid">
-    <div class="harga-card">
-      <h3>1 – 14 Februari 2026</h3>
-      <ul>
-        <li>Wilayah I <span>Rp 20.950</span></li>
-        <li>Wilayah II <span>Rp 20.950</span></li>
-        <li>Wilayah III <span>Rp 21.050</span></li>
-        <li>Wilayah IV <span>Rp 21.200</span></li>
-      </ul>
-    </div>
-
-    <div class="harga-card">
-      <h3>14 – 28 Februari 2026</h3>
-      <ul>
-        <li>Wilayah I <span>Rp 21.200</span></li>
-        <li>Wilayah II <span>Rp 21.200</span></li>
-        <li>Wilayah III <span>Rp 21.300</span></li>
-        <li>Wilayah IV <span>Rp 21.450</span></li>
-      </ul>
-    </div>
+  <div class="harga-card">
+    <h3>1 – 14 Februari 2026</h3>
+    <ul>
+      <li>Wilayah I <span id="p1-w1">20650</span></li>
+      <li>Wilayah II <span id="p1-w2">20650</span></li>
+      <li>Wilayah III <span id="p1-w3">20650</span></li>
+      <li>Wilayah IV <span id="p1-w4">20650</span></li>
+    </ul>
   </div>
-</section>
+
+  <div class="harga-card">
+    <h3>14 – 28 Februari 2026</h3>
+
+    <div id="status" class="status">Loading...</div>
+
+    <ul>
+      <li>Wilayah I <span id="p2-w1">20800</span></li>
+      <li>Wilayah II <span id="p2-w2">20800</span></li>
+      <li>Wilayah III <span id="p2-w3">20800</span></li>
+      <li>Wilayah IV <span id="p2-w4">20800</span></li>
+    </ul>
+  </div>
+
+</div>
+
 
 <section id="gallery">
   <h2 class="title">Gallery<h2>
@@ -221,7 +240,26 @@ footer{
 
 <a href="https://wa.me/628158841410" class="wa-btn" target="_blank">💬 Hubungi Kami</a>
 
+   <script>
+  const p1 = 20650;
+  const p2 = 20800;
+
+  const status = document.getElementById("status");
+  const selisih = p2 - p1;
+
+  if(selisih > 0){
+    status.innerHTML = "⬆ Naik Rp " + selisih.toLocaleString("id-ID");
+    status.classList.add("naik");
+  }else if(selisih < 0){
+    status.innerHTML = "⬇ Turun Rp " + Math.abs(selisih).toLocaleString("id-ID");
+    status.classList.add("turun");
+  }else{
+    status.innerHTML = "Harga Tidak Berubah";
+  }
+</script>
+ 
 </body>
 </html>
+
 
 

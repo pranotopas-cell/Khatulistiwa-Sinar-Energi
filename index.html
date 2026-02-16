@@ -6,247 +6,127 @@
 <title>PT Khatulistiwa Sinar Energi</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
-body{background:#020617;color:#fff;padding-top:80px}
+body{margin:0;font-family:Arial;background:#020617;color:white;padding-top:80px}
+header{position:fixed;top:0;left:0;width:100%;background:#020617;
+padding:12px 25px;display:flex;justify-content:space-between;align-items:center;
+border-bottom:1px solid #1e293b;z-index:999}
 
-/* HEADER */
-header{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  background:#020617;
-  padding:12px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
-  border-bottom:1px solid #1e293b;
+.logo{display:flex;align-items:center;gap:10px}
+.logo img{height:45px}
+
+nav a{color:white;text-decoration:none;margin-left:20px;font-weight:bold}
+
+section{padding:60px 20px}
+
+.hero{text-align:center;height:80vh;display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+background:linear-gradient(#020617cc,#020617cc),
+url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') center/cover}
+
+.hero button{padding:14px 25px;border:none;border-radius:10px;background:#22c55e;font-weight:bold}
+
+.harga-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:1100px;margin:auto}
+
+.card{background:white;color:black;padding:20px;border-radius:15px}
+
+.card li{list-style:none;display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed #ccc}
+
+.status{text-align:center;font-weight:bold;padding:8px;border-radius:10px;margin-bottom:10px}
+
+.naik{background:#fee2e2;color:#b91c1c}
+.turun{background:#dcfce7;color:#166534}
+
+.penawaran{
+margin-top:15px;
+display:block;
+text-align:center;
+background:#22c55e;
+color:black;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.logo img{
-  height:45px;
-}
-
-.logo span{
-  font-size:15px;
-  font-weight:bold;
-  color:#22c55e;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-  font-weight:600;
-}
-
-nav a:hover{color:#22c55e}
-
-/* HERO */
-.hero{
-  height:100vh;
-  background:linear-gradient(135deg,#020617cc,#020617cc),
-  url('https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1600&q=80') center/cover;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
-
-.hero h1{font-size:48px}
-.hero p{margin:15px 0;font-size:18px}
-
-.hero button{
-  padding:14px 30px;
-  border:none;
-  border-radius:10px;
-  background:#22c55e;
-  font-size:16px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* SECTION */
-section{padding:80px 30px}
-
-.title{text-align:center;font-size:32px;margin-bottom:40px}
-
-/* DASHBOARD */
-.harga-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.harga-card{
-  background:#fff;
-  color:#020617;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,.4);
-}
-
-.harga-card h3{text-align:center;margin-bottom:15px}
-
-.harga-card li{
-  list-style:none;
-  display:flex;
-  justify-content:space-between;
-  padding:10px 0;
-  border-bottom:1px dashed #ccc;
-}
-
-.harga-card span{color:#16a34a;font-weight:bold}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.gallery img{
-  width:100%;
-  border-radius:12px;
-  transition:.3s;
-}
-
-.gallery img:hover{transform:scale(1.05)}
-
-/* FOOTER */
-footer{
-  background:#020617;
-  text-align:center;
-  padding:25px;
-  border-top:1px solid #1e293b;
-}
-
-/* WA */
-.wa-btn{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
-  padding:14px 18px;
-  border-radius:50px;
-  font-weight:bold;
-  box-shadow:0 8px 20px rgba(0,0,0,.4);
-}
+footer{text-align:center;padding:20px;border-top:1px solid #1e293b}
 </style>
 </head>
-
 
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo.png" alt="Logo PT Khatulistiwa Sinar Energi">
-    <span>PT KHATULISTIWA SINAR ENERGI</span>
+    <img src="logo.png">
+    <b>PT KHATULISTIWA SINAR ENERGI</b>
   </div>
-
   <nav>
     <a href="#home">Home</a>
     <a href="#harga">Harga</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#kontak">Kontak</a>
+    <a href="admin.html">Admin</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
-  <div>
-    <h1>Mitra Penyalur dan Transportir BBM Industri<h1>
-    <h2>Sinergi Mengalirkan Energi Untuk Negeri<h2>
-    <p>Legal • Handal • Harga Pasti • Kualitas dan Kuantitas Terpercaya •</p>
-    <button onclick="location.href='#harga'">Lihat Harga</button>
-  </div>
-</section>
-<div class="harga-grid">
-
-  <div class="harga-card">
-    <h3>1 – 14 Februari 2026</h3>
-    <ul>
-      <li>Wilayah I <span id="p1-w1">20.950</span></li>
-      <li>Wilayah II <span id="p1-w2">20.950</span></li>
-      <li>Wilayah III <span id="p1-w3">21.050</span></li>
-      <li>Wilayah IV <span id="p1-w4">21.200</span></li>
-    </ul>
-  </div>
-
-  <div class="harga-card">
-    <h3>14 – 28 Februari 2026</h3>
-
-    <div id="status" class="status">Loading...</div>
-
-    <ul>
-      <li>Wilayah I <span id="p2-w1">21.200</span></li>
-      <li>Wilayah II <span id="p2-w2">21.200</span></li>
-      <li>Wilayah III <span id="p2-w3">21.300</span></li>
-      <li>Wilayah IV <span id="p2-w4">21.400</span></li>
-    </ul>
-  </div>
-
-</div>
-
-
-<section id="gallery">
-  <h2 class="title">Gallery<h2>
-
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=600&q=80">
-    <img src="https://images.unsplash.com/photo-1627467959547-b6c927f40d68?auto=format&fit=crop&w=600&q=80">
-    <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=600&q=80">
-    <img src="https://images.unsplash.com/photo-1581091870627-3ff48b30c7b8?auto=format&fit=crop&w=600&q=80">
-  </div>
+  <h1>Distributor Solar Industri Resmi</h1>
+  <p>Harga Publish Pertamina • Legal • Terpercaya</p>
+  <button onclick="location.href='#harga'">Lihat Harga</button>
 </section>
 
-<section id="kontak">
-  <h2 class="title">📞 Hubungi Kami</h2>
-  <p style="text-align:center">PT Khatulistiwa Sinar Energi<br>Mitra Penyalur dan Transportir BBM Industri</p>
+<section id="harga">
+  <h2 style="text-align:center">📊 Dashboard Harga Realtime</h2>
+
+  <div class="harga-grid">
+
+    <div class="card">
+      <h3>Periode Sebelumnya</h3>
+      <ul id="p1"></ul>
+    </div>
+
+    <div class="card">
+      <h3>Periode Sekarang</h3>
+      <div id="status" class="status"></div>
+      <ul id="p2"></ul>
+
+      <a class="penawaran" href="https://wa.me/628XXXXXXXXXX" target="_blank">
+        💬 Minta Penawaran
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <footer>
-  © 2026 PT Khatulistiwa Sinar Energi — All Rights Reserved
+© 2026 PT Khatulistiwa Sinar Energi
 </footer>
 
-<a href="https://wa.me/628158841410" class="wa-btn" target="_blank">💬 Hubungi Kami</a>
+<script>
+let data = JSON.parse(localStorage.getItem("harga")) || {
+  p1:[20650,20650,20650,20650],
+  p2:[20800,20800,20800,20800]
+};
 
-   <script>
-  const p1 = 20950;
-  const p2 = 21200;
+const wilayah=["Wilayah I","Wilayah II","Wilayah III","Wilayah IV"];
 
-  const status = document.getElementById("status");
-  const selisih = p2 - p1;
+function render(){
+  p1.innerHTML="";
+  p2.innerHTML="";
+  data.p1.forEach((v,i)=>p1.innerHTML+=`<li>${wilayah[i]} <b>Rp ${v.toLocaleString("id-ID")}</b></li>`);
+  data.p2.forEach((v,i)=>p2.innerHTML+=`<li>${wilayah[i]} <b>Rp ${v.toLocaleString("id-ID")}</b></li>`);
 
-  if(selisih > 0){
-    status.innerHTML = "⬆ Naik Rp " + selisih.toLocaleString("id-ID");
-    status.classList.add("naik");
-  }else if(selisih < 0){
-    status.innerHTML = "⬇ Turun Rp " + Math.abs(selisih).toLocaleString("id-ID");
-    status.classList.add("turun");
+  let diff=data.p2[0]-data.p1[0];
+  if(diff>0){
+    status.innerHTML="⬆ Naik Rp "+diff.toLocaleString("id-ID");
+    status.className="status naik";
+  }else if(diff<0){
+    status.innerHTML="⬇ Turun Rp "+Math.abs(diff).toLocaleString("id-ID");
+    status.className="status turun";
   }else{
-    status.innerHTML = "Harga Tidak Berubah";
+    status.innerHTML="Harga Tidak Berubah";
   }
+}
+
+render();
 </script>
- 
+
 </body>
 </html>
-
-
-
-
-
-
-

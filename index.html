@@ -117,9 +117,9 @@ let grafikSekarang=[];
 let grafikKemarin=[];
 
 wilayah.forEach((w,i)=>{
-let sekarang=data.sekarang[w];
-let kemarin=data.kemarin[w];
-let selisih=sekarang-kemarin;
+let sekarang = parseInt(data.sekarang[w]) || 0;
+let kemarin = parseInt(data.kemarin[w]) || 0;
+let selisih = sekarang - kemarin;
 let warna=selisih>0?"red":"green";
 let tanda=selisih>0?"▲":"▼";
 
@@ -165,7 +165,7 @@ let baru={};
 
 for(let i=0;i<wilayah.length;i++){
 let input=prompt(`Harga Wilayah ${i+1}`,data.sekarang[wilayah[i]]);
-baru[wilayah[i]]=Number(input);
+baru[wilayah[i]] = parseInt(input) || 0;
 }
 
 await updateDoc(ref,{
@@ -189,5 +189,6 @@ function loginAdmin(){
   
 </body>
 </html>
+
 
 

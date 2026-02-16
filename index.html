@@ -3,209 +3,252 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PT.Khatulistiwa Sinar Energi</title>
+<title>PT Khatulistiwa Sinar Energi</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* NAVBAR */
-.navbar {
-    background-color: #0b3d2e;
-    padding: 15px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+body{
+  background:#f8fafc;
+  color:#222;
+  line-height:1.7;
 }
 
-.navbar h1 {
-    margin: 0;
-    font-size: 20px;
+header{
+  background:#0f3d2e;
+  color:white;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:999;
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
 }
 
-.menu a:hover {
-    text-decoration: underline;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand img{
+  height:50px;
+}
+
+.menu a{
+  margin-left:25px;
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.menu a:hover{
+  border-bottom:2px solid #1abc9c;
 }
 
 /* HERO */
-.hero {
-    background-color: #145a41;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+.hero{
+  height:100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+  url('https://images.unsplash.com/photo-1581092919537-28baf6c80d0c') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  padding:20px;
 }
 
-.section {
-    padding: 40px 20px;
-    background: white;
-    margin: 20px;
-    border-radius: 10px;
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
 }
 
-.footer {
-    background-color: #0b3d2e;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.hero p{
+  font-size:22px;
+  margin-bottom:25px;
 }
 
-/* FORM */
-input, textarea, select {
-    width: 100%;
-    padding: 10px;
-    margin: 8px 0;
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  background:#1abc9c;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:bold;
 }
 
-button {
-    background-color: #145a41;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+.btn:hover{
+  background:#16a085;
 }
 
-/* WHATSAPP FLOAT */
-.wa-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 22px;
-    text-decoration: none;
+/* SECTION */
+section{
+  padding:90px 12%;
+}
+
+h2{
+  text-align:center;
+  color:#0f3d2e;
+  margin-bottom:30px;
+  font-size:36px;
+}
+
+p.center{
+  text-align:center;
+  max-width:900px;
+  margin:auto;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+  text-align:center;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* FOOTER */
+footer{
+  background:#0f3d2e;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* WHATSAPP */
+.wa-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  padding:15px 18px;
+  border-radius:50%;
+  font-size:22px;
+  box-shadow:0 4px 12px rgba(0,0,0,.3);
+  text-decoration:none;
+}
+
+@media(max-width:768px){
+  .navbar{
+    flex-direction:column;
+    gap:10px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  section{
+    padding:70px 8%;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <h1>PT.KHATULISTIWA SINAR ENERGI</h1>
-    <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#tentang">Tentang Kami</a>
-        <a href="#keunggulan">Keunggulan</a>
-        <a href="#legalitas">Legalitas</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#kontak">Kontak</a>
-        <a href="#dashboard">Dashboard</a>
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <img src="logo.png">
+      <strong>PT Khatulistiwa Sinar Energi</strong>
     </div>
-</div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#tentang">Tentang</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#kontak">Kontak</a>
+    </div>
+  </div>
+</header>
 
-<!-- HOME -->
 <div id="home" class="hero">
-    <h2>Mitra Penyalur & Transportir BBM Industri</h2>
-    <p><b>Sinergi Mengalirkan Energi</b></p>
-    <p><img src="logo.png"alt="logo"></p>
+  <div>
+    <h1>Mitra Penyalur & Transportir BBM Industri</h1>
+    <p>Sinergi Mengalirkan Energi Untuk Negeri</p>
+    <a href="#kontak" class="btn">Hubungi Kami</a>
+  </div>
 </div>
 
-<!-- TENTANG -->
-<div id="tentang" class="section">
-    <h2>Tentang Kami</h2>
-    <p>
-        PT. Khatulistiwa Sinar Energi adalah perusahaan yang bergerak di bidang
-        penyaluran dan transportasi BBM industri yang berkomitmen pada
-        kecepatan, keamanan, dan ketepatan distribusi energi.
-    </p>
-</div>
+<section id="tentang">
+  <h2>Tentang Kami</h2>
+  <p class="center">
+    PT Khatulistiwa Sinar Energi merupakan perusahaan yang bergerak di bidang penyaluran 
+    dan transportasi BBM industri yang berkomitmen pada kecepatan, keamanan, serta ketepatan 
+    distribusi energi untuk mendukung kebutuhan industri nasional.
+  </p>
+</section>
 
-<!-- KEUNGGULAN -->
-<div id="keunggulan" class="section">
-    <h2>Keunggulan</h2>
-    <ul>
-        <li>Distribusi BBM cepat dan aman</li>
-        <li>Armada transportasi profesional</li>
-        <li>Tim berpengalaman</li>
-        <li>Jaringan distribusi luas</li>
-    </ul>
-</div>
+<section id="keunggulan">
+  <h2>Keunggulan Kami</h2>
+  <div class="grid">
+    <div class="card">Distribusi Cepat & Tepat Waktu</div>
+    <div class="card">Armada Lengkap & Terawat</div>
+    <div class="card">Tenaga Profesional & Bersertifikat</div>
+    <div class="card">Legalitas Lengkap & Resmi</div>
+  </div>
+</section>
 
-<!-- LEGALITAS -->
-<div id="legalitas" class="section">
-    <h2>Legalitas</h2>
-    <p>
-        Dokumen legalitas perusahaan, izin usaha, dan sertifikasi dapat ditampilkan di bagian ini.
-    </p>
-</div>
+<section id="layanan">
+  <h2>Layanan Kami</h2>
+  <div class="grid">
+    <div class="card">Mitra Penyalur Solar Industri</div>
+    <div class="card">Transportasi BBM Industri</div>
+    <div class="card">Pengiriman Skala Besa via SPOBr</div>
+    <div class="card">Logistik Energi Terpadu</div>
+  </div>
+</section>
 
-<!-- LAYANAN -->
-<div id="layanan" class="section">
-    <h2>Layanan</h2>
-    <ul>
-        <li>Penyaluran BBM Industri</li>
-        <li>Transportasi BBM</li>
-        <li>Pengiriman ke lokasi proyek</li>
-    </ul>
-</div>
+<section id="kontak">
+  <h2>Kontak Perusahaan</h2>
+  <div class="grid">
+    <div class="card">
+      📍 Alamat <br><br>
+      Jl.H.M.Rafi'i rt 24 Madurejo Arut Selatan Pangkalan Bun
+    </div>
+    <div class="card">
+      📞 Telepon <br><br>
+      08158841410
+    </div>
+    <div class="card">
+      ✉ Email <br><br>
+      pt.khatulistiwa.sinar.energi@gmail.com
+    </div>
+  </div>
+</section>
 
-<!-- KONTAK -->
-<div id="kontak" class="section">
-    <h2>Kontak</h2>
-    <p><b>Alamat:</b> Jln H.M Rafi'i RT 24, Pangkalan Bun, Kalimantan Tengah</p>
-    <p><b>Email:</b> pt.khatulistiwa.sinar.energi@gmail.com</p>
-    <p><b>WhatsApp:</b> 0815-8841-410</p>
-</div>
+<footer>
+  © 2026 PT Khatulistiwa Sinar Energi | Company Profile Official Website
+</footer>
 
-<!-- DASHBOARD -->
-<div id="dashboard" class="section">
-    <h2>Dashboard Upload Data Pengiriman BBM</h2>
-    <form>
-        <label>Nama Driver</label>
-        <input type="text" placeholder="Masukkan nama driver">
-
-        <label>No Polisi Kendaraan</label>
-        <input type="text" placeholder="Contoh: KH 1234 XX">
-
-        <label>Jenis BBM</label>
-        <select>
-            <option>Solar</option>
-            <option>Dexlite</option>
-            <option>Pertalite</option>
-        </select>
-
-        <label>Jumlah (Liter)</label>
-        <input type="number">
-
-        <label>Tanggal Pengiriman</label>
-        <input type="date">
-
-        <label>Upload Surat Jalan</label>
-        <input type="file">
-
-        <button type="submit">Simpan Data</button>
-    </form>
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-    <p>© 2026 PT. Khatulistiwa Sinar Energi</p>
-</div>
-
-<!-- WHATSAPP FLOAT -->
 <a class="wa-float" href="https://wa.me/628158841410" target="_blank">💬</a>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
